@@ -1,0 +1,79 @@
+<!--
+  Generated template for the DonorsListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="secondary">
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="trips detail-bg">
+
+    <div *ngIf="(AbstractTweet.length > 0); else elseBlock">
+      <div class="trip card"  *ngFor="let user of AbstractTweet "  margin-bottom>
+        <div class="trip-info card round">
+          <div *ngIf="(user.group | bloodTypePipe) === 'AB positive'" class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + url + ')'}"></div>
+          <div  *ngIf="(user.group | bloodTypePipe) === 'AB negative'" class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + url1 + ')'}"></div>
+          <div  *ngIf="(user.group | bloodTypePipe) === 'B positive'" class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + url6 + ')'}"></div>
+          <div *ngIf="(user.group | bloodTypePipe) === 'B negative'" class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + url5 + ')'}"></div>
+          <div *ngIf="(user.group | bloodTypePipe) === 'A negative'" class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + url7 + ')'}"></div>
+          <div  *ngIf="(user.group | bloodTypePipe) === 'O positive'" class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + url3 + ')'}"></div>
+          <div  *ngIf="(user.group | bloodTypePipe) === 'O negative'" class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + url2 + ')'}"></div>
+          <ion-grid padding>
+            <ion-row>
+              <ion-col width-66>
+                <p ion-text color="primary">firstName: {{user.firstname}}</p>
+                <div>
+
+                  <br/>
+                  <button ion-button (click)="launchDialer(user.phoneNum)"> call {{user.phoneNum}}</button>
+                </div>
+
+                <div margin-top>
+                  <button ion-button icon-start block no-margin color="primary" class="round"     tappable (click)="confirmUser(user)">
+                  Confirm donor!
+                  </button>
+                </div>
+              </ion-col>
+              <ion-col col-4>
+
+                <p ion-text color="primary">lastName: {{user.surname}}</p>
+                <h5 ion-text color="primary" class="bold" no-margin>
+               </h5>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+      </div>
+
+  <ng-template #elseBlock>
+          <h5 style="text-align: center;">no Donors at the moment</h5>
+  </ng-template>
+
+  <ion-footer>
+    <div *ngIf="(AbstractTweet.length > 0)">
+      <ion-toolbar padding color="color-red">
+        <p ion-text no-margin class="color-red">
+          <strong>{{AbstractTweet.length}}</strong> Donor are willing to donate!
+        </p>
+      </ion-toolbar>
+    </div>
+  </ion-footer>
+
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content
+      pullingText="Pull to refresh"
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles"
+      refreshingText="..fetching">
+    </ion-refresher-content>
+  </ion-refresher>
+
+</ion-content>
+
+
+

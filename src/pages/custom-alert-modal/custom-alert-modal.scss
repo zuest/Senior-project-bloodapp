@@ -1,0 +1,19 @@
+page-custom-alert-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  ion-content.content{
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    .scroll-content {
+      overflow-y: hidden;
+    }
+    button.button-md {
+      margin: 10rem 12rem;
+    }
+    ion-img {
+      margin: 0rem 1rem;
+    }
+  }
+}

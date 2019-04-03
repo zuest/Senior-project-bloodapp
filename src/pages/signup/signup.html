@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="secondary">
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="signupForm">
+    <ion-list no-lines>
+    <h3 ion-text class="title text-center" color="secondary">First Name</h3>
+    <ion-item>
+      <ion-icon name="contact" item-left></ion-icon>
+      <ion-input formControlName="firstName" type="text" placeholder="First Name"> </ion-input>
+    </ion-item>
+
+      <h3 ion-text class="title text-center" color="secondary">Last Name</h3>
+      <ion-item>
+        <ion-icon name="contact" item-left></ion-icon>
+        <ion-input formControlName="surname"  type="text" placeholder="Last Name"> </ion-input>
+      </ion-item>
+
+      <h3 ion-text class="title text-center" color="secondary">birth Date</h3>
+      <ion-item>
+        <ion-icon name="calendar" item-left></ion-icon>
+        <ion-datetime  displayFormat="MM/DD/YYYY" formControlName="myDate" placeholder="Date of birth"></ion-datetime>
+      </ion-item>
+
+      <h3 ion-text class="title text-center" color="secondary">phone Number</h3>
+
+
+        <ion-label stacked>Phone Number</ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="call" item-left></ion-icon>
+          </ion-col>
+          <ion-col col-11>
+            <h1>
+              {{phone_number}}
+            </h1>
+            <ngx-intl-tel-input [(value)]="phone_number"></ngx-intl-tel-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    <button ion-button color="secondary" (click)="pressNext(signupForm)" block>Continue</button>
+    </ion-list>
+  <!--<ion-input formControlName="email" type="email" placeholder="Your email address"-->
+  <!--[class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty">-->
+  <!--</ion-input>-->
+  </form>
+
+
+
+ </ion-content>
+

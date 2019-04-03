@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar hideBackButton color="secondary">
+      <ion-buttons left>
+        <button ion-button navPop icon-only>
+          <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          Back
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="tweets">
+    <ion-card *ngFor="let t of tweets ">
+      <ion-item>
+        <ion-icon name="medkit" item-start large></ion-icon>
+
+        <p>Date: {{t.created_at}}</p>
+        <p>Name: {{t.user.name}}</p>
+        <p>location: {{t.user.location}}</p>
+        <p>twitter name: {{t.user.screen_name}}</p>
+      </ion-item>
+
+      <ion-card-content>
+        <p>info: {{t.full_text}}</p>
+      </ion-card-content>
+
+      <ion-item>
+        <button ion-button icon-left clear item-end>
+          <ion-icon name="navigate"></ion-icon>
+          Donate to this person
+        </button>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

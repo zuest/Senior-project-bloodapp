@@ -1,0 +1,60 @@
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+    <ion-item class="secondary">
+        <ion-label class="secondary">
+          <ion-icon name="mail" item-start class="secondary"></ion-icon>
+          Email
+        </ion-label>
+
+        <ion-input formControlName="email" type="email" placeholder="email address"
+                   [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty"></ion-input>
+
+
+      <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && loginForm.controls.email.dirty">
+        <p>Please enter a valid email.</p>
+      </ion-item>
+
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-label class="secondary">
+          <ion-icon name="lock" item-start class="secondary"></ion-icon>
+          Password
+        </ion-label>
+
+        <ion-input formControlName="password" type="password" placeholder="password"
+                   [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty"></ion-input>
+
+        <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && loginForm.controls.password.dirty">
+          <p>Your password needs more than 6 characters.</p>
+        </ion-item>
+      </ion-item>
+
+    <div text-center margin-top>
+    <p  ion-text color="secondary" tappable (click)="goToResetPassword()"><strong>Forgot Password?</strong></p>
+    </div>
+    <div>
+      <button ion-button icon-start block color="secondary" type="submit" [disabled]="!loginForm.valid" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        SIGN IN
+      </button>
+    </div>
+    </form>
+
+  <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="goToSignup()">New here? <strong>Sign up</strong></span>
+    </div>
+  </div>
+</ion-content>

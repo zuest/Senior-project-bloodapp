@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1089315323438",
+    "firebase_url": "https://blood-don.firebaseio.com",
+    "project_id": "blood-don",
+    "storage_bucket": "blood-don.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089315323438:android:04412454599ce1d0",
+        "android_client_info": {
+          "package_name": "com.pwh.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1089315323438-ssi5g0nr8152no6omrie695e22d88d4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkBWCbASHJlaVYo_75UcBXpvNenOBLeI8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

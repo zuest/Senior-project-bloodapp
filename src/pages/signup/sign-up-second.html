@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding no-bounce>
+  <!--<ion-icon name="arrow-back" color="light" (click)="pressBack()"></ion-icon>-->
+
+  <form [formGroup]="form">
+    <ion-list no-lines>
+      <h3 ion-text class="title text-center" color="secondary">Email Address</h3>
+      <ion-item>
+        <ion-icon name="mail" item-left></ion-icon>
+        <ion-input formControlName="email"  type="text" placeholder="Email" [class.invalid]="!form.controls.email.valid && form.controls.email.dirty">> </ion-input>
+      </ion-item>
+      <ion-item class="error-message"
+                *ngIf="!form.controls.email.valid  && form.controls.email.dirty">
+        <p>Please enter a valid email.</p>
+      </ion-item>
+
+
+
+      <h3 ion-text class="title text-center" color="secondary">password.</h3>
+      <ion-item>
+        <ion-icon name="key" item-left></ion-icon>
+        <ion-input formControlName="password"  type="password" placeholder="Password"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="key" item-left></ion-icon>
+        <ion-input formControlName="confirmpassword" type="password" placeholder="Confirm password"> </ion-input>
+      </ion-item>
+
+      <ion-item class="error-message"
+                *ngIf="!form.controls.password.valid  && form.controls.password.dirty">
+        <p>password length must be more then 6 characters</p>
+      </ion-item>
+      <!--<ion-item class="error-message"-->
+                <!--*ngIf="!(form.controls.password  === form.controls.confirmpassword)">-->
+        <!--<p>password does not match!</p>-->
+      <!--</ion-item>-->
+
+
+      <h3 ion-text class="title text-center" color="secondary">Blood Group?</h3>
+      <ion-item>
+        <ion-label>blood group</ion-label>
+        <ion-multi-picker formControlName="group" item-content [multiPickerColumns]="simpleColumns"></ion-multi-picker>
+      </ion-item>
+
+      <ion-item style="font-size: 13px;height:58px;">
+        <p item-start>
+          save my location
+        </p>
+        <ion-toggle (ionChange)="onLocateUser()" toggle-ios-background-color-on="primary" checked="false"></ion-toggle>
+        <ion-icon name='locate' item-left></ion-icon>
+
+      </ion-item>
+
+      <button ion-button color="secondary" (click)="registerUser(form)" block>Register!</button>
+    </ion-list>
+  </form>
+
+
+</ion-content>

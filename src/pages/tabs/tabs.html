@@ -1,0 +1,14 @@
+
+<div *ngIf="isDon; else elseBlock">
+<ion-tabs>
+  <ion-tab [root]="mapPage" tabTitle="Map" tabIcon="map"></ion-tab>
+  <ion-tab [root]="RecipientList" tabTitle="RecipientList" tabIcon="list-box"></ion-tab>
+</ion-tabs>
+</div>
+
+<ng-template #elseBlock>
+<ion-tabs>
+  <ion-tab [root]="mapPage" tabTitle="Map" tabIcon="map"></ion-tab>
+  <ion-tab [root]="donorList" tabTitle="donor List" tabIcon="list-box"></ion-tab>
+</ion-tabs>
+</ng-template>

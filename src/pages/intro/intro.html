@@ -1,0 +1,44 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="goToHome()" color="primary">Skip</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <img src="assets/images/slide1.png" class="slide-image"/>
+      <h2 class="slide-title">
+        Welcome to <b>Hemato</b>
+      </h2>
+      <p>
+        The <b>Hemato app</b> an app that saves lives.<b>anywhere</b> <b>anytime</b>.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/images/slide2.png" class="slide-image"/>
+      <h2 class="slide-title" >What is Hemato?</h2>
+      <p> Based from Qatar, Hemato is a Blood Donation Application that allows people to request and receive blood with <b>ease and anywhere from the world!</b></p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/images/slide2.png" class="slide-image"/>
+      <h2 class="slide-title">Secured</h2>
+      <p><b>Hemato</b>As Hemato integrates your data to a public social media database. Hemato ensures your information is kept private and secured in a top class infrastructure!</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/images/slide2.png" class="slide-image"/>
+      <h2 class="slide-title">Ready to use Hemato?</h2>
+      <button ion-button icon-end large clear (click)="goToHome()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
